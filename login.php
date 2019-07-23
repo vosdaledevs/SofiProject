@@ -14,17 +14,17 @@
     <meta name="description" content="Sofi Web Site for Statistics">
     <title>Welcome to Sofi</title>
 </head>
-<body>
-    <div id="main">
-        <div id="login">
+<body id="body">
+    <div class="main">
+        <div class="login">
             <img src="img/Colgate_logo2019.png" alt="login image" id="loginimage">
             <form id="loginform" action="login.php" method="POST">
                 <div>
-                    <input id="tflogin" type="text" name="user" id="" placeholder="Username" required oninvalid="this.setCustomValidity('Please, enter a valid username.')"
+                    <input class="tflogin" type="text" name="user" id="" placeholder="Username" required oninvalid="this.setCustomValidity('Please, enter a valid username.')"
                     oninput="setCustomValidity('')"><br> <br>
                 </div> 
                 <div>
-                    <input id="tflogin" type="password" name="pass" id="" placeholder="Password" required oninvalid="this.setCustomValidity('Please, check your password is not wrong.')"
+                    <input class="tflogin" type="password" name="pass" id="" placeholder="Password" required oninvalid="this.setCustomValidity('Please, check your password is not wrong.')"
                     oninput="setCustomValidity('')"> <br> <br>
                     <input id="btnLogin" type="submit" value="Sign In">
                 </div>
