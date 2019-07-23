@@ -8,10 +8,17 @@ body
 }
 .main
 {
-    justify-content:center;
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
 }
 .login
 {
+    position: absolute;
+    top:10%;
     background-color: #D11B25;
     border-radius: 2rem;
     border-color: #D11B25;
@@ -21,10 +28,6 @@ body
     height: 500px;
     padding: 30px;
     text-align: center;
-    position: relative;
-    margin:auto;
-    top: 2rem;
-    bottom: 2rem;
     box-shadow: -4px 4px 10px 5px rgba(0, 0, 0, 0.397);
 }
 #tflogin
