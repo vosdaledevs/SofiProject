@@ -15,8 +15,8 @@
     <title>Welcome to Sofi</title>
 </head>
 <body>
-    <div class="main">
-        <div class="login">
+    <div id="main">
+        <div id="login">
             <img src="img/Colgate_logo2019.png" alt="login image" id="loginimage">
             <form id="loginform" action="login.php" method="POST">
                 <div>
