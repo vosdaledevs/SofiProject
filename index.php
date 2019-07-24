@@ -1,33 +1,36 @@
-<?php
-
-$host=$_SERVER['HTTP_HOST'];
-$uri=$_SERVER['REQUEST_URI'];
-$availables_routes=array("/");
-
-// verify if the REQUEST_URI if available
-if(in_array($uri, $availables_routes)){
-	$cookie_value=$uri;
-}else{
-    $cookie_value="404";
-}
-
-// headers declarations for evit cache storing for files
-header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
-header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-header("Connection: close");
-
-// header declaration for redirect to 404 page when if necesary
-if(count(explode("/", $uri)) > 2){
-    header("Location: http://".$host."/404");
-    exit();
-}
-
-// cookie declaration to indicate the application path
-setcookie('path', $cookie_value, time()+(86400 * 30), "/");
-
-// loading a returning the html code for application
-$index=file_get_contents('login.html');
-echo $index;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="css/GoogleSans.css">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Vos Dale Developers S.A | vosdaledevs@gmail.com | support@vosdaledevelopers.com">
+    <meta name="description" content="Sofi Web Site for Statistics">
+    <title>Welcome to Sofi</title>
+</head>
+<body id="body">
+    <div class="main">
+        <div class="login">
+            <img src="img/Colgate_logo2019.png" alt="login image" id="loginimage">
+            <form id="loginform" action="login.php" method="POST">
+                <div>
+                    <input class="tflogin" type="text" name="user" id="" placeholder="Username" required oninvalid="this.setCustomValidity('Please, enter a valid username.')"
+                    oninput="setCustomValidity('')"><br> <br>
+                </div> 
+                <div>
+                    <input class="tflogin" type="password" name="pass" id="" placeholder="Password" required oninvalid="this.setCustomValidity('Please, check your password is not wrong.')"
+                    oninput="setCustomValidity('')"> <br> <br>
+                    <input id="btnLogin" type="submit" value="Sign In">
+                </div>
+            </form>
+            <label > <a  id="recover" href="">Recover Password</a></label>
+        </div>
+    </div>
+</body>
+</html>
