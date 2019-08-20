@@ -14,17 +14,18 @@ class DB
     public function __construct()
     {
         $this->host='127.0.0.1:3306';
-        $this->db='vosdaled_bdcolgatepalmolive';
-        $this->pass='admin';
+        $this->db='vosdaled_BDColgatePalmolive';
         $this->charset='utf8mb4';
     }
     public function ValidateCon($username)
     {
         if ($username == 'admin') 
         {
-            $this->user='root';
+            $this->user='vosdaled_admin';
+	    $this->pass='Queserinda7um@dre';
         } else {
-            $this->user='root';
+            $this->user='vosdaled_mobile';
+	    $this->pass='alg0s1mple';
         }
     }
     public function connect()
