@@ -99,3 +99,57 @@ BEGIN
 	where NOT C.Name = 'Colgate');
 END; //
 DELIMITER ;
+
+--Insertar SOM listo
+ DELIMITER //
+ create procedure InsertSOM(
+ 	_product int,
+ 	_SuperMarket int,
+ 	_Quantity decimal(10,0),
+ 	_Date date)
+ BEGIN
+ 	insert into SOM values (_product, _SuperMarket, _Quantity, _Date);
+ END; //
+ DELIMITER ;
+
+--Ver SOM mensual
+DElIMITER //
+create procedure ShowMonthlySOM(
+	_Date date)
+ BEGIN
+ 	select P.Name as Product, S.Qty as Quantity, S.DateOfAdd as 'Date' from SOM S
+ 	inner join Product P on S.FKProduct = P.PKProduct
+ 	where S.DateOfAdd = _Date;
+ END; //
+ DELIMIRTER ;
+
+--Ver SOM de un producto especifico
+ DELIMIRTER //
+ create procedure ShowProductMontlySOM(
+ 	_product varchar(15),
+ 	_Date date)
+ BEGIN
+ 	select P.Name as Product, S.Qty as Quantity, S.DateOfAdd as 'Date' from SOM S
+ 	inner join Product P on S.FKProduct = P.PKProduct
+ 	where S.DateOfAdd = _Date and P.Name = _product;
+ END; //
+ DELIMIRTER ;
+
+--escalera de precios por supermercado
+ DELIMIRTER //
+ create procedure PriceLaderBySupermarket(
+ 	_SuperMarket int,
+ 	_category int,
+ 	_presentation int)
+BEGIN
+ 	select P.Name as Product, p.Units, p.Unitqty, S.Qty as Quantity, S.DateOfAdd as 'Date' from proddetail PDt
+    inner join company co on PDt.IDCompany = co.PKCompany
+    inner join product prod on PDt.FKProduct = prod.PKProduct
+    inner join SOM s on prod.PKProduct = s.FKProduct
+    inner join supermarket sp on s.FKSuperMarket = sp.PKSuperMarket
+    inner join presentation p on PDt.IDPresentation = p.PKPresentation
+    inner join category cat on PDt.IDCategory = cat.PKCategory
+ 	where sp.PKSuperMarket = _Supermarket and cat.PKCategory = _Category and p.PKPresentation = _Presentation
+ 	order by P.Qty, P.Name;
+ END; //
+ DELIMIRTER ;
