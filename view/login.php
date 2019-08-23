@@ -19,12 +19,14 @@
         <div class="login">
             <img src="img/Colgate_logo2019.png" alt="login image" id="loginimage">
             <form id="loginform" action="" method="POST">
+            <label class="errormsg">
             <?php
                 if(isset($errorLogin)) 
                 {
                     echo $errorLogin;
                 }
             ?>
+            </label>
                 <div>
                     <input class="tflogin" type="text" name="user" id="" placeholder="Username" required oninvalid="this.setCustomValidity('Please, enter a valid username.')"
                     oninput="setCustomValidity('')"><br> <br>

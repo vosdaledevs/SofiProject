@@ -113,7 +113,7 @@ DELIMITER ;
  DELIMITER ;
 
 --Ver SOM mensual
-DElIMITER //
+DELIMITER //
 create procedure ShowMonthlySOM(
 	_Date date)
  BEGIN
@@ -121,10 +121,10 @@ create procedure ShowMonthlySOM(
  	inner join Product P on S.FKProduct = P.PKProduct
  	where S.DateOfAdd = _Date;
  END; //
- DELIMIRTER ;
+DELIMITER ;
 
 --Ver SOM de un producto especifico
- DELIMIRTER //
+ DELIMITER //
  create procedure ShowProductMontlySOM(
  	_product varchar(15),
  	_Date date)
@@ -133,10 +133,10 @@ create procedure ShowMonthlySOM(
  	inner join Product P on S.FKProduct = P.PKProduct
  	where S.DateOfAdd = _Date and P.Name = _product;
  END; //
- DELIMIRTER ;
+ DELIMITER ;
 
 --escalera de precios por supermercado
- DELIMIRTER //
+ DELIMITER //
  create procedure PriceLaderBySupermarket(
  	_SuperMarket int,
  	_category int,
@@ -152,4 +152,4 @@ BEGIN
  	where sp.PKSuperMarket = _Supermarket and cat.PKCategory = _Category and p.PKPresentation = _Presentation
  	order by P.Qty, P.Name;
  END; //
- DELIMIRTER ;
+ DELIMITER ;

@@ -20,12 +20,12 @@
             include_once 'view/dashboard.php';
         }else{
             //echo "No existe el usuario";
-            $errorLogin = "Nombre de usuario y/o password incorrecto";
-            include_once 'includes/login.php';
+            $errorLogin = "Nombre de usuario y/o password incorrecto <br> <br>";
+            include_once 'view/login.php';
         }          
     }
     else
     {
-        include_once 'includes/login.php';
+        include_once 'view/login.php';
     }
 ?>
