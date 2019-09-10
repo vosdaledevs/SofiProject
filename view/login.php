@@ -1,8 +1,10 @@
+<?php
+    header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1 
+    header("Expires: Sat, 1 Jul 2000 05:00:00 GMT"); // Fecha en el pasado
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/loginStyle.css">
-    <link rel="stylesheet" href="css/GoogleSans.css">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
@@ -12,14 +14,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Vos Dale Developers S.A | vosdaledevs@gmail.com | support@vosdaledevelopers.com">
     <meta name="description" content="Sofi Web Site for Statistics">
+    <link rel="stylesheet" href="../css/GoogleSans.css">
+    <link rel="stylesheet" href="../css/loginStyle.css">
     <title>Welcome to Sofi</title>
 </head>
 <body id="body">
     <div class="main">
         <div class="login">
-            <img src="img/Colgate_logo2019.png" alt="login image" id="loginimage">
+            <img src="../img/Colgate_logo2019.png" alt="login image" id="loginimage">
             <form id="loginform" action="" method="POST">
-            <label class="errormsg">
+            <label id="errormsg">
             <?php
                 if(isset($errorLogin)) 
                 {

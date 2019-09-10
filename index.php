@@ -3,10 +3,10 @@
     include_once 'includes/sessioncontrol.php';
     $userSession = new SESSIONCONTROLLER();
     $user= new User();
-    if (isset($_SESISON['user'])) 
+    if (isset($_SESSION['user'])) 
     {
         $user->setUser($userSession->getCurrentUser());
-        include_once '/view/dashboard.php';
+        include_once 'view/dashboard.php';
     }
     elseif (isset($_POST['user']) && isset($_POST['pass'])) 
     {
@@ -14,7 +14,6 @@
         $passForm = $_POST['pass'];
         if($user->login($userForm,$passForm))
         {
-            //echo "Existe el usuario";
             $userSession->setCurrentUser($userForm);
             $user->setUser($userForm);
             include_once 'view/dashboard.php';

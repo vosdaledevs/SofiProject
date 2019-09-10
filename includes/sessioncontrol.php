@@ -7,7 +7,8 @@ class SESSIONCONTROLLER extends DB
     {
         session_start();
     }
-    public function __initsession(){
+    public function sessioninit()
+    {
         session_start();
     }
 

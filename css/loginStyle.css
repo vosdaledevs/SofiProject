@@ -1,6 +1,7 @@
 *
 {
     font-family: "GoogleSans";
+    outline: none;
 }
 #body
 {
@@ -85,7 +86,7 @@
 {
     color: blue;
 }
-.errormsg
+#errormsg
 {
     color:white;
 }

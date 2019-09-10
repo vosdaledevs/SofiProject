@@ -19,9 +19,10 @@ class DB
     }
     public function ValidateCon($username)
     {
-        $this->user='root';
+        /*$this->user='root';
         $this->pass='admin';
-        /*if ($username == 'admin') 
+        $this->db='vosdaled_bdcolgatepalmolive';*/
+        if ($username == 'admin') 
         {
             $this->user='vosdaled_admin';
             $this->pass='Queserinda7um@dre';
@@ -29,7 +30,7 @@ class DB
         } else {
             $this->user='vosdaled_mobile';
 	        $this->pass='alg0s1mple';
-        }*/
+        }
     }
     public function connect()
     {
