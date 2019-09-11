@@ -1,0 +1,40 @@
+*
+{
+    font-family: "GoogleSans";
+
+    }    
+.dropdown-menu
+{
+    transform: translateX(-200%);
+    background-color: #D11B25;
+}
+header
+{
+    overflow: hidden;
+    width: 100vw;
+    background-color: #D11B25;
+}
+.row a
+{
+    color: white;
+}
+.row a:hover
+{
+    background-color: rgb(153, 17, 24);
+}
+
+.pie a
+{
+        color: white;
+}
+.footer-abajo
+{
+    overflow: hidden;
+    height: 50px;
+    width:100vw; 
+    position:absolute; 
+    background-color: #D11B25;
+    color: white;
+    left: 0;
+    bottom: 0;
+}
