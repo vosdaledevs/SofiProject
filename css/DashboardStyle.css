@@ -10,9 +10,12 @@
 }
 header
 {
-    overflow: hidden;
     width: 100vw;
     background-color: #D11B25;
+}
+.row 
+{
+    width: 100vw;
 }
 .row a
 {
